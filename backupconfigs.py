@@ -8,7 +8,7 @@ f = open ('myswitches')
 
 for IP in f:
     IP=IP.strip()
-    print("Get running Config Switch " + (IP))
+    print("Getting running Configs of Switch " + (IP))
     HOST = IP
     tn = telnetlib.Telnet(HOST)
     tn.read_until(b"Username: ")
