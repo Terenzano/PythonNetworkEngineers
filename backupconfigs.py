@@ -17,7 +17,7 @@ for IP in f:
         tn.read_until(b"Password: ")
         tn.write(password.encode('ascii') + b"\n")
     tn.write(b"terminal length 0\n")
-    tn.write(b"show run")
+    tn.write(b"show run\n")
     tn.write(b"exit\n")
 
     readoutput = tn.read_all()
