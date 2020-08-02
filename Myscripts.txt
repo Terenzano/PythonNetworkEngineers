@@ -1,12 +1,12 @@
 config t
-host S6
+host S4
 
 enable password cisco
 
 username cisco privilege 15 password cisco
 
 int vl 1
-ip add 192.168.122.86 255.255.255.0
+ip add 192.168.122.84 255.255.255.0
 no shut
 
 line vty 0 4
