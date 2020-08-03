@@ -8,7 +8,7 @@ f = open ('myswitches')
 
 for IP in f:
     IP=IP.strip()
-    print("Getting running Configs of Switch " + (IP))
+    print("Enabling SSH on Switch " + (IP))
     HOST = IP
     tn = telnetlib.Telnet(HOST)
     tn.read_until(b"Username: ")
@@ -16,14 +16,10 @@ for IP in f:
     if password:
         tn.read_until(b"Password: ")
         tn.write(password.encode('ascii') + b"\n")
-    tn.write(b"terminal length 0\n")
-    tn.write(b"show run\n")
+    tn.write(b"config t\n")
+    tn.write(b"ip domain-name cciedevnet.com\n")
+    tn.write(b"crypto key generate rsa\n")
+    tn.write(b"1024\n")
+    tn.write(b"end\n")
     tn.write(b"exit\n")
-
-    readoutput = tn.read_all()
-    saveoutput = open("switch" + HOST, "w")
-    saveoutput.write(readoutput.decode('ascii'))
-    saveoutput.write("\n")
-    saveoutput.close
-
 
