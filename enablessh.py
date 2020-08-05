@@ -16,6 +16,7 @@ for IP in f:
     if password:
         tn.read_until(b"Password: ")
         tn.write(password.encode('ascii') + b"\n")
+
     tn.write(b"config t\n")
     tn.write(b"ip domain-name cciedevnet.com\n")
     tn.write(b"crypto key generate rsa\n")
@@ -23,3 +24,8 @@ for IP in f:
     tn.write(b"end\n")
     tn.write(b"exit\n")
     print(tn.read_all().decode('ascii'))
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> 6514103d81ec1a627e1461fc26a0383fc7c09561
