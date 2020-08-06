@@ -7,3 +7,6 @@ iosvl2.open()
 ios_output = iosvl2.get_mac_address_table()
 print (json.dumps(ios_output, sort_keys=True, indent=4))
 
+ios_output = iosvl2.get_arp_table()
+print (json.dumps(ios_output, sort_keys=True, indent=4))
+
