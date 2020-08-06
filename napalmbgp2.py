@@ -2,7 +2,8 @@ import json
 from napalm import get_network_driver
 
 bgplist = ['192.168.122.71',
-            '192.168.122.72'
+            '192.168.122.72',
+            '192.168.122.82'
             ]
 
 for ip_address in bgplist:
