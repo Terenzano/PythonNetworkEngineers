@@ -8,7 +8,7 @@ print("Accessing 192.168.122.72")
 iosvl2.load_merge_candidate(filename='ACL1.cfg')
 
 diffs = iosvl2.compare_config()
-if len(diffs) > 0
+if len(diffs) > 0:
     print(diffs)
     iosvl2.commit_config()
 else:
