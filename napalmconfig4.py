@@ -1,7 +1,8 @@
 import json
 from napalm import get_network_driver
 
-devicelist = ['192.168.122.82',
+devicelist = ['192.168.122.72',
+              '192.168.122.82',
               '192.168.122.83',
               '192.168.122.84'
              ]
